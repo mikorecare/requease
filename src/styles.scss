@@ -1,0 +1,36 @@
+@import '@angular/material/theming';
+@include mat-core();
+
+// Define the primary palette (blue theme).
+$app-primary: mat-palette($mat-blue, 500, 400, 700);
+
+// Define the secondary palette (blue accent).
+$app-accent: mat-palette($mat-light-blue, 400, 200, 500);
+
+// Define custom warn color (still using red, but you can change it to something else if you prefer).
+$app-warn: mat-palette($mat-red);
+
+// Create the theme object (including typography with whitesmoke for body text).
+$app-theme: mat-light-theme((
+  color: (
+    primary: $app-primary,
+    accent: $app-accent,
+    warn: $app-warn,
+  ),
+));
+
+// Include the custom theme styles.
+@include angular-material-theme($app-theme);
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #e6e6e3 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

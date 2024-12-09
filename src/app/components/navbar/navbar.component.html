@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="sidebar-header">
+      <img src="../../../assets/logo.jpg" alt="Logo" class="logo" />
+      <h3>RequEase</h3>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <nav>
+      <a mat-button routerLink="/dashboard" class="menu-item">
+        <mat-icon>dashboard</mat-icon> Dashboard
+      </a>
+
+      <a mat-button routerLink="/users" class="menu-item">
+        <mat-icon>person</mat-icon> User
+      </a>
+
+      <a mat-button routerLink="/reports" class="menu-item">
+        <mat-icon>description</mat-icon> Reports
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <h3>Maintenance</h3>
+      <a mat-button routerLink="/official-documents" class="menu-item">
+        <mat-icon>description</mat-icon> Official Documents
+      </a>
+      <a mat-button routerLink="/event-venue" class="menu-item">
+        <mat-icon>event</mat-icon> Event Venue
+      </a>
+      <a mat-button routerLink="/event-equipment" class="menu-item">
+        <mat-icon>settings</mat-icon> Event Equipment
+      </a>
+      <a mat-button routerLink="/announcements" class="menu-item">
+        <mat-icon>announcement</mat-icon> Announcements
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <h3>Transaction</h3>
+      <a mat-button routerLink="/document-requests" class="menu-item">
+        <mat-icon>request_page</mat-icon> Document Request
+      </a>
+    </nav>
+    <div class="profile-section">
+        <a mat-button class="profile">
+          <mat-icon>account_circle</mat-icon> Villanueva, John Ol...
+          <small>Administrator</small>
+        </a>
+      </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

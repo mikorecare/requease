@@ -4,6 +4,11 @@
   overflow: hidden !important;
 }
 
+::ng-deep mat-sidenav-content {
+  margin: 0!important;
+  padding: 20px!important;
+}
+
 ::ng-deep .mat-drawer-container {
     position: relative;
     z-index: 1;
@@ -16,7 +21,7 @@
 }
 
 ::ng-deep .mat-drawer-content{
-    position: absolute!important;
+    position: relative!important;
     width: 100%;
 }
 
@@ -26,6 +31,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: #f8f9fa;
+  color: #000;
+  padding: 1rem;
+  position: relative;
 }
 
 /* Sidebar header with logo */
@@ -44,22 +53,16 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow-y: auto; /* Changed from scroll to auto */
-  height: 100%; /* Or a specific height like 500px */
-  max-height: 80vh; /* Use viewport height (vh) for relative height */
+  overflow-y: auto;
+  height: 100%;
+  max-height: 80vh;
 }
 
 .sidenav-container {
   height: 100vh;
 }
 
-.sidenav {
-  min-width: 250px;
-  background-color: #f8f9fa;
-  color: #000;
-  padding: 1rem;
-  position: relative; /* Make sure it takes the full space within the container */
-}
+
 
 nav {
   display: flex;
@@ -101,8 +104,8 @@ nav::-webkit-scrollbar-thumb:hover {
 }
 
 .menu-item:hover {
-  background-color: #e0e0e0; /* Light background on hover */
-  color: #000; /* Text color changes on hover */
+  background-color: #e0e0e0;
+  color: #000;
 }
 
 .mat-divider {
@@ -110,7 +113,6 @@ nav::-webkit-scrollbar-thumb:hover {
   border-top: 1px solid #ddd;
 }
 
-/* Profile section at the bottom */
 .profile-section {
   text-align: center;
   margin-top: auto;
@@ -118,7 +120,6 @@ nav::-webkit-scrollbar-thumb:hover {
   position: relative;
 }
 
-/* Profile link with icon */
 .profile {
   display: flex;
   align-items: center;
@@ -135,5 +136,5 @@ nav::-webkit-scrollbar-thumb:hover {
 .profile small {
   display: block;
   font-size: 12px;
-  color: #777; /* Light text color for small text */
+  color: #777;
 }

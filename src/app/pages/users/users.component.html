@@ -1,1 +1,24 @@
-<p>users works!</p>
+<table mat-table [dataSource]="userData">
+    <!-- Dynamic columns from tHead -->
+    <ng-container *ngFor="let key of tHead">
+      <ng-container matColumnDef="{{ key }}">
+        <th mat-header-cell *matHeaderCellDef>{{ key }}</th>
+        <td mat-cell *matCellDef="let user">
+          <!-- Custom handling for the 'action' column -->
+          <ng-container *ngIf="key === 'action'">
+            <button mat-button (click)="viewUser(user)">View</button>
+            <button mat-button (click)="editUser(user)">Edit</button>
+            <button mat-button (click)="deleteUser(user)">Delete</button>
+          </ng-container>
+          <!-- Default handling for other columns -->
+          <ng-container *ngIf="key !== 'action'">{{ user[key] }}</ng-container>
+        </td>
+      </ng-container>
+    </ng-container>
+  
+    <!-- Table Header -->
+    <tr mat-header-row *matHeaderRowDef="tHead"></tr>
+    <!-- Table Body -->
+    <tr mat-row *matRowDef="let row; columns: tHead"></tr>
+  </table>
+  
